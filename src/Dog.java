@@ -28,4 +28,9 @@ public class Dog extends Pet {
         this.breed = breed;
         System.out.println("вызван конструктор класса Dog");
     }
+
+    @Override
+    public void move() {
+        System.out.println("собаки любят бегать");
+    }
 }

@@ -1,7 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClassesAndMethods {
     public static void main(String[] args) {
         //exemple1();
-        exemple2();
+        //exemple2();
+        exemple3();
+    }
+
+    private static void exemple3() {
+        Dog d = new Dog("Каштанка", "дворняга");
+        d.walkOutsideHouse();
+        Parrot parrot = new Parrot("Гоша", "зеленый");
+        parrot.walkOutsideHouse();
+        Cat cat = new Cat("Cat");
+        cat.walkOutsideHouse();
+
+        Pet[] pets = new Pet[3];
+        pets[0] = cat;  pets[1] = parrot;  pets[2] = d;
+        walkWithPets(pets);
+
+        ArrayList<Pet> petArrayList = new ArrayList<>();
+        petArrayList.addAll(List.of(pets));
+        petArrayList.add(new Cat("Васька"));
+
+        walkWithPets(petArrayList);
+    }
+
+    static void walkWithPets(Pet[] pets)
+    {
+        System.out.println("========== все пошли гулять ==========");
+        for (int i = 0; i < pets.length; i++) {
+            pets[i].walkOutsideHouse();
+        }
+
+        System.out.println("========== все вернулись ==========");
+    }
+
+    static void walkWithPets(ArrayList<Pet> petList)
+    {
+        Pet[] pets2 = new Pet[petList.size()];
+        petList.toArray(pets2);
+        walkWithPets(pets2);
     }
 
     static void exemple2() {

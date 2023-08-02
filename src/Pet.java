@@ -19,4 +19,13 @@ public abstract class Pet {
         System.out.println("было имя " + name + " станет " + s);
         this.name = s;
     }
+
+    public abstract void move();
+
+    public void walkOutsideHouse()
+    {
+        System.out.println("выйдем из дома с "+getName());
+        move();
+        System.out.println("вернемся");
+    }
 }

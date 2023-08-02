@@ -19,7 +19,16 @@ public class Cat extends Pet{
         setName("безымянный");
     }
 
+
+    public void move() {
+        jump();
+    }
+
     public Cat(String name) {
         super(name);    //явный вызов конструктора базового класса с параметром
+    }
+
+    public void jump(){
+        System.out.println("котик "+getName()+" прыгает");
     }
 }

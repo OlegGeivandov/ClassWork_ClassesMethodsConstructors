@@ -10,4 +10,9 @@ public class Parrot extends Pet{
     {
         System.out.println("Попугай "+getName() +" говорит \""+phrase+"\"");
     }
+
+    @Override
+    public void move() {
+        System.out.println("будем считать, что попугай умеет двигаться");
+    }
 }
