@@ -1,6 +1,15 @@
 public class ClassesAndMethods {
     public static void main(String[] args) {
-        exemple1();
+        //exemple1();
+        exemple2();
+    }
+
+    static void exemple2() {
+        Cat kitty3 = new Cat("Васька");
+        kitty3.say();
+
+        Dog dog1 = new Dog("Мухтар", "овчарка");
+
     }
 
     static void exemple1() {
@@ -10,7 +19,15 @@ public class ClassesAndMethods {
         System.out.println(kitty1.getName());
         kitty1.setName("Наполеон");
         System.out.println(kitty1.getName());
-        //kitty2.name = "hjkljl";
+
+        kitty1.say();
+        Cat[] massiv = new Cat[3];
+        massiv[0] = kitty1;
+        massiv[1] = kitty2;
+        massiv[2] = new Cat();
+        for (Cat cat: massiv    ) {
+            cat.say();
+        }
     }
 }
 
@@ -26,6 +43,21 @@ class Cat {
     {
         System.out.println("было имя "+name+" станет "+s);
         name = s;
+    }
+
+    public void say()
+    {
+        System.out.println("котик "+name+" говорит МЯУ");
+    }
+
+    public Cat()
+    {
+        setName( "безымянный");
+    }
+
+    public Cat(String name)
+    {
+        setName(name);
     }
 }
 
@@ -50,5 +82,11 @@ class Dog{
             this.breed = breed;
         else
             System.out.println("поздно, порода уже задана");
+    }
+
+    public Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
+        System.out.println("вызван конструктор класса Dog");
     }
 }
