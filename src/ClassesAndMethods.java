@@ -5,7 +5,32 @@ public class ClassesAndMethods {
     public static void main(String[] args) {
         //exemple1();
         //exemple2();
-        exemple3();
+       // exemple3();
+        exemple4();
+    }
+
+    static void exemple4() {
+        ArrayList<Pet> petList = new ArrayList<>();
+        petList.add(new Dog("Жучка","такса"));
+        Pet somePet = new Pet("Чупакабра") {
+            @Override
+            public void move() {
+                System.out.println("чух-чух");
+            }
+        };
+        petList.add(somePet);
+        for (int i = 0; i < petList.size(); i++) {
+            System.out.println(petList.get(i).getName());
+            System.out.println(petList.get(i).getClass().getName());
+            if(petList.get(i) instanceof Dog)
+            {
+                System.out.println("мы проверили, это собака");
+                System.out.println("порода: "+ ((Dog) petList.get(i)).getBreed());
+            }
+            if(petList.get(i) instanceof Cat)
+                System.out.println("мы проверили, это кошка");
+        }
+
     }
 
     private static void exemple3() {
