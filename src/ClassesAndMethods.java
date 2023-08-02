@@ -10,6 +10,10 @@ public class ClassesAndMethods {
 
         Dog dog1 = new Dog("Мухтар", "овчарка");
 
+        Parrot popka = new Parrot("Кеша", "белый");
+        popka.say("А вы бывали на Таити?");
+        Pet p = new Cat("Зверюшка");
+        System.out.println(p.getClass().getName());
     }
 
     static void exemple1() {
@@ -31,62 +35,3 @@ public class ClassesAndMethods {
     }
 }
 
-class Cat {
-    private String name;
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String s)
-    {
-        System.out.println("было имя "+name+" станет "+s);
-        name = s;
-    }
-
-    public void say()
-    {
-        System.out.println("котик "+name+" говорит МЯУ");
-    }
-
-    public Cat()
-    {
-        setName( "безымянный");
-    }
-
-    public Cat(String name)
-    {
-        setName(name);
-    }
-}
-
-class Dog{
-    private String name;
-    private String breed;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        if(this.breed == null)
-            this.breed = breed;
-        else
-            System.out.println("поздно, порода уже задана");
-    }
-
-    public Dog(String name, String breed) {
-        this.name = name;
-        this.breed = breed;
-        System.out.println("вызван конструктор класса Dog");
-    }
-}
